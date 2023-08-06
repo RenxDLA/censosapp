@@ -1,24 +1,38 @@
-import logo from './logo.svg';
+//ESTILOS
 import './App.css';
+import './bootstrap.min.css';
+import './estilos.css';
+
+//STORE
+import { Provider } from 'react-redux';
+import { store } from './store/store';
+
+//RUTEO
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+//COMPONENTES
+import Cabezal from './componentes/Cabezal';
+import Login from "./componentes/Login";
+import Registro from './componentes/Registro';
+import Dashboard from './componentes/Dashboard';
+import NoEncontrado from './componentes/NoEncontrado';
+import Footer from './componentes/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Cabezal />} >
+            <Route path="/" element={<Login />} />
+            <Route path="/Registro" element={<Registro />} />
+            <Route path="/Dashboard" element={<Dashboard />} />
+            <Route path="*" element={<NoEncontrado />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+      <Footer />
+    </Provider>
   );
 }
 
