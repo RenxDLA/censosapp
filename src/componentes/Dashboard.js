@@ -34,7 +34,7 @@ const Dashboard = () => {
           }
         });
 
-        fetch(`https://censo.develotion.com//personas.php?idUsuario=${idUsuario}`, {
+      fetch(`https://censo.develotion.com//personas.php?idUsuario=${idUsuario}`, {
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
           'apikey': apiKey,
@@ -53,14 +53,25 @@ const Dashboard = () => {
   }, [])
 
   return (
-    <div className="container-fluid">
-      <Analisis />
-      <div className="row">
-        <Formulario />
-        <ListaCensados />
-        <Totales />
-      </div>
+    <div className="container-fluid ">
+      <section className="row">
+        <div className="col-lg-16" >
+          <Analisis />
+        </div>
 
+       
+          <div className="row row-cols-2 align-items-center justify-content-center ">
+            <div className="row row-cols-2 justify-content-around">
+            <div className="prueba1 col-10" > <Formulario /></div>
+            <div className="prueba1 col-10" >  <ListaCensados /></div>
+            </div>
+            <div className="row prueba align-items-center">
+            <Totales />
+            </div>
+          </div>
+        
+
+      </section>
     </div>
   )
 }

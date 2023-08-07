@@ -53,8 +53,8 @@ const Graficas = () => {
     return (
         <div className="col">
             <h2>Graficas</h2>
-            <div className="row">
-                <div className='col'>
+            <div className="row row-col-2 graf">
+                <div className='col grafInd'>
                     <Bar options={options} data={{
                         labels: [...deptoC],
                         datasets: [
@@ -67,7 +67,7 @@ const Graficas = () => {
                     }} />
                 </div>
                 {/* van una al lado de la otra */}
-                <div className="col">grafica 2</div>
+                <div className="col grafInd">grafica 2</div>
             </div>
 
         </div>

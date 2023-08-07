@@ -1,11 +1,30 @@
+
+
 .fondo {
-    background-color: #FFDBC3;
+    background-color:rgb(242,238,157, 0.8);
+    
+
+}
+
+.login{
+    border: 2px solid black !important;             
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(255, 255, 255, 0.7); 
+}
+
+
+.registro{
+    border: 2px solid black !important;             
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(255, 255, 255, 0.7); 
 }
 
 .header {
     height: 150px;
     width: 100%;
-    background-color: #3D246C;
+    background-color: rgb(85,122,70, 0.8);
     display: flex;
     align-items: center;
     justify-content:space-evenly;
@@ -13,13 +32,89 @@
     color: #fff;
 }
 
-.footer{
-    height: 110px;
-    width: 100%;
-    background-color: black;
+
+.footer {
     display: flex;
     align-items: center;
+    background-color: rgb(140,51,51, 0.8);
+    
+    bottom: 0;
+    width: 100%;
+    height: 90px;
+    color: white;
     justify-content:space-between;
-    padding: 0 20px;
-    color: #fff;
+  }
+
+
+.textosLog{
+    font-size: large;
+    margin-top: 50px ;
+    margin-bottom: 10px ;
+    
+}
+
+
+.textosReg{
+    font-size: large;
+    margin-top: 50px ;
+    margin-bottom: 10px ;
+    
+    
+}
+
+.textosLog input {
+    margin: 10px;
+}
+
+.textosReg input {
+    margin: 10px;
+}
+
+.btn{
+    font-size:larger;
+    margin: 20px;
+    padding: 10px;
+    width: 40%;
+}
+
+
+
+
+
+.prueba{
+    border:  solid 3px black;
+    padding: 15px;
+    margin: 15px;
+    width: 30%;
+    height: 200px;
+    border-radius: 20px;
+    background-color: rgb(242,238,157, 0.5);
+}
+
+.prueba1{
+    border:  solid 3px black;
+    padding: 15px;
+    margin: 15px;
+    width: 30%;
+    height:500px;
+    border-radius: 20px;
+    background-color: rgb(242,238,157, 0.5);
+
+}
+
+
+.graf{
+    height: 80%;
+    padding: 15px;
+    margin: 15px;
+    
+}
+
+.grafInd{
+
+ 
+    border:  solid 3px black;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 20px;
 }

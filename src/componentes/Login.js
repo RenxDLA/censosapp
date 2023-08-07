@@ -51,17 +51,26 @@ const Login = () => {
 
   }
   return (
-    <div className="fondo">
-      <h2>Login</h2>
-      
-      <p>¿Aún no tiene cuenta? <Link to="/Registro">Registrarme</Link></p>
-      <div>
-        <label htmlFor="txtUsuario">Usuario:</label>
-        <input type="text" id="txtUsuario" onChange={campoActivo} ref={user} /><br />
-        <label htmlFor="txtContraseña">Contraseña:</label>
-        <input type="password" id="txtContraseña" onChange={campoActivo} ref={pass} /><br />
-        <input type="button" value="Ingresar" disabled={estadoBoton} onClick={ingresar} />
-        <p>{error}</p>
+    <div className="fondo container-fluid d-flex justify-content-center align-items-center">
+      <div className="border p-4 rounded-3 text-center login">
+        <h2>Login</h2>
+        <div className="row g-3 align-items-center">
+        <p>¿Aún no tiene cuenta? <Link to="/Registro">Registrarme</Link></p>
+        <div>
+
+          <div className="textosLog">
+            <label htmlFor="txtUsuario">Usuario:</label>
+            <input type="text" id="txtUsuario" onChange={campoActivo} ref={user} /><br />
+
+            <label htmlFor="txtContraseña">Contraseña:</label>
+            <input type="password" id="txtContraseña" onChange={campoActivo} ref={pass} /><br />
+            </div>
+
+            <input type="button" className="btn btn-success" value="Ingresar" disabled={estadoBoton} onClick={ingresar} />
+            <p>{error}</p>
+
+          </div>
+        </div>
       </div>
     </div>
   )

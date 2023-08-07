@@ -45,16 +45,25 @@ const Registro = () => {
 
   }
   return (
-    <div className="container-fluid d-flex justify-content-center align-items-center fondo">
-      <h2>Registro</h2>
-      <p>¿Ya tiene una cuenta? <Link to="/">Ingresar</Link></p>
-      <div>
-        <label htmlFor="txtUsuario">Usuario:</label>
-        <input type="text" id="txtUsuario" ref={user} /><br />
-        <label htmlFor="txtContraseña">Contraseña:</label>
-        <input type="password" id="txtContraseña" ref={pass} /><br />
-        <input type="button" value="Registrar" onClick={registrar} />
-        <p>{error}</p>
+    <div className="fondo container-fluid d-flex justify-content-center align-items-center">
+      <div className="border p-4 rounded-3 text-center registro">
+        <h2>Registro</h2>
+        <div className="row g-3 align-items-center">
+          <p>¿Ya tiene una cuenta? <Link to="/">Ingresar</Link></p>
+          <div>
+
+            <div className="textosReg">
+              <label htmlFor="txtUsuario">Usuario:</label>
+              <input type="text" id="txtUsuario" ref={user} /><br />
+              <label htmlFor="txtContraseña">Contraseña:</label>
+              <input type="password" id="txtContraseña" ref={pass} /><br />
+
+            </div>
+            <input type="button" className="btn btn-success" value="Registrar" onClick={registrar} />
+
+            <p>{error}</p>
+          </div>
+        </div>
       </div>
     </div>
   )
