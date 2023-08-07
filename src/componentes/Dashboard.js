@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Formulario from "./Formulario";
+import Analisis from "./Analisis";
 import { useDispatch } from "react-redux";
 import { seteardeptos } from "../features/deptosSlice";
 
@@ -35,6 +36,7 @@ const Dashboard = () => {
   return (
     <div>
       <h2>Dashboard</h2>
+      <Analisis />
       <Formulario />
     </div>
   )
