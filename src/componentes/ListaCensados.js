@@ -1,6 +1,6 @@
 const ListaCensados = () => {
   return (
-    <div>
+    <div className="col">
         <h2>Censados</h2>
         <div>
             una lista o tabla con los censados

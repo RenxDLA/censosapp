@@ -4,6 +4,8 @@ import Formulario from "./Formulario";
 import Analisis from "./Analisis";
 import { useDispatch } from "react-redux";
 import { seteardeptos } from "../features/deptosSlice";
+import ListaCensados from "./ListaCensados";
+import Totales from "./Totales";
 
 const Dashboard = () => {
 
@@ -34,10 +36,14 @@ const Dashboard = () => {
   }, [])
 
   return (
-    <div>
-      <h2>Dashboard</h2>
+    <div className="container-fluid">
       <Analisis />
-      <Formulario />
+      <div className="row">
+        <Formulario />
+        <ListaCensados />
+        <Totales />
+      </div>
+
     </div>
   )
 }

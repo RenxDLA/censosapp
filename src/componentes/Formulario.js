@@ -106,7 +106,7 @@ const Formulario = () => {
     }
 
     return (
-        <div>
+        <div className="col">
             <div>
                 <h2>Agregar censo</h2>
             </div>
