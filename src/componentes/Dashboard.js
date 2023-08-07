@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { seteardeptos } from "../features/deptosSlice";
 import ListaCensados from "./ListaCensados";
 import Totales from "./Totales";
+import { setearCensados } from "../features/censadosSlice";
 
 const Dashboard = () => {
 
@@ -28,7 +29,23 @@ const Dashboard = () => {
         .then(r => r.json())
         .then((data) => {
           if (data.codigo === 200) {
+            console.log(data);
             dispatch(seteardeptos(data.departamentos))
+          }
+        });
+
+        fetch(`https://censo.develotion.com//personas.php?idUsuario=${idUsuario}`, {
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+          'apikey': apiKey,
+          'iduser': idUsuario
+        },
+      })
+        .then(r => r.json())
+        .then((data) => {
+          console.log(data);
+          if (data.codigo === 200) {
+            dispatch(setearCensados(data.personas))
           }
         });
 

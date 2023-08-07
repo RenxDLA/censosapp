@@ -30,7 +30,10 @@ const Formulario = () => {
             ocupacion: slcO.current.value
         };
         //hacer validaciones al objeto antes del fetch
-        if (censo.nombre === "" || censo.departamento === "" || censo.ciudad === "" || censo.fechaNacimiento === "" || censo.ocupacion === "") setMensaje("Por favor complete todos los campos")
+        if (censo.nombre === "" || censo.departamento === "" || censo.ciudad === "" || censo.fechaNacimiento === "" || censo.ocupacion === "") setMensaje("Por favor complete todos los campos");
+        else if (censo.fechaNacimiento >= new Date()) {
+            setMensaje("La fecha de nacimiento no puede ser posterior a hoy")
+        }
         else {
             fetch('https://censo.develotion.com/personas.php', {
                 method: 'POST',

@@ -18,26 +18,31 @@ const Registro = () => {
       usuario: user.current.value,
       password: pass.current.value
     }
-    fetch(`https://censo.develotion.com/usuarios.php`, {
-      method: 'POST',
-      body: JSON.stringify(bodyRegis),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    })
-      .then(r => r.json())
-      .then((data) => {
-        //console.log(data)
-        if (data.codigo === 200) {
-          localStorage.setItem("ApiKey", data.apiKey);
-          localStorage.setItem("UsuarioId", data.id);
-          navigate("/Dashboard")
-        }
-        else {
-          localStorage.clear();
-          setError(data.mensaje)
-        }
+    if (bodyRegis.usuario === "" || bodyRegis.password === "") {
+      setError("Por favor complete todos los campos");
+    } else {
+      fetch(`https://censo.develotion.com/usuarios.php`, {
+        method: 'POST',
+        body: JSON.stringify(bodyRegis),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
       })
+        .then(r => r.json())
+        .then((data) => {
+          //console.log(data)
+          if (data.codigo === 200) {
+            localStorage.setItem("ApiKey", data.apiKey);
+            localStorage.setItem("UsuarioId", data.id);
+            navigate("/Dashboard")
+          }
+          else {
+            localStorage.clear();
+            setError(data.mensaje)
+          }
+        })
+    }
+
   }
   return (
     <div className="container-fluid d-flex justify-content-center align-items-center fondo">

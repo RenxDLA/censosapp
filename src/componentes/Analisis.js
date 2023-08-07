@@ -6,8 +6,7 @@ import Tiempo from "./Tiempo"
 const Analisis = () => {
     return (
         <div className="row">
-            <h2>Analisis</h2>
-            <p>Sección de analisis</p>
+            <h2>Analisis estadístico</h2>            
             <Graficas />
             <div className="col">
                 <div className="row">
