@@ -15,7 +15,7 @@ const Tiempo = () => {
   }, [])
 
   return (
-    <div className="row">
+    <div className="row col-12 tiem">
       <h2>Tiempo restante </h2>
       <div className="row">
         <p className="col">{dias}</p>

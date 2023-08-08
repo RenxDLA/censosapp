@@ -103,6 +103,7 @@
 }
 
 
+
 .graf{
     height: 80%;
     padding: 15px;
@@ -117,4 +118,41 @@
     padding: 15px;
     margin: 15px;
     border-radius: 20px;
+    background-color: rgb(242,238,157, 0.5);
+}
+
+
+.grafcar{
+
+    width: 93%;
+    border:  solid 3px black;
+    padding: 15px;
+    margin: 15px;
+    margin-left: 40px;
+    border-radius: 20px;
+    background-color: rgb(242,238,157, 0.5);
+}
+
+.anali{
+
+    width: 40%;
+    border:  solid 3px black;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 20px;
+    background-color: rgb(242,238,157, 0.5);
+}
+
+.tiem{
+    margin: 30px;
+    width:90%;
+    border:  solid 3px black;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: rgb(242,238,157, 0.5);
+}
+
+.btnLog{
+    width: 20%;
+    font-weight: 900;
 }

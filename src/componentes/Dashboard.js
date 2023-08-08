@@ -59,17 +59,24 @@ const Dashboard = () => {
           <Analisis />
         </div>
 
-       
-          <div className="row row-cols-2 align-items-center justify-content-center ">
-            <div className="row row-cols-2 justify-content-around">
-            <div className="prueba1 col-10" > <Formulario /></div>
-            <div className="prueba1 col-10" >  <ListaCensados /></div>
+
+        <div className="row row-cols-2 align-items-center">
+          
+            <div className="col">
+              <div className="row row-cols-2 justify-content-around">
+
+              <div className="prueba1 " > <Formulario /></div>
+              <div className="prueba1" >  <ListaCensados /></div>
+              </div>
             </div>
-            <div className="row prueba align-items-center">
+          
+          <div className="row">
+          <div className="col prueba">
             <Totales />
-            </div>
           </div>
-        
+          </div>
+        </div>
+
 
       </section>
     </div>

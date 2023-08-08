@@ -10,8 +10,10 @@ const Analisis = () => {
             <Graficas />
             <div className="col">
                 <div className="row">
-                    <Mapa />
-                    <Porcentaje />
+                    <div className="row row-cols-2 align-items-center justify-content-center">
+                    <div className="anali"> <Mapa /> </div>
+                    <div className="anali"> <Porcentaje /> </div>
+                    </div>
                 </div>
 
                 <Tiempo />
