@@ -1,11 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 const Totales = () => {
-    
+    const [cMvdeo, setCMvdeo] = useState(0);
+    const [cTotales, setCTotales] = useState(0);
+    const [cResto, setCResto] = useState(0);
     const censados = useSelector( state => state.censados.censados);
     useEffect(() => {
-
+        setCMvdeo(censados.filter(c=>c.departamento===3218).length);
+        setCTotales(censados.length);
+        setCResto(cTotales-cMvdeo);
     }, [censados])
     
     return (
@@ -14,15 +18,15 @@ const Totales = () => {
             <div className="row">
                 <div className="col">
                     <h4>Montevideo</h4>
-                    <p>{censados.filter(c=>c.departamento===3218).length}</p>
+                    <p>{cMvdeo}</p>
                 </div>
                 <div className="col">
                     <h4>Total</h4>
-                    <p>{censados.length}</p>
+                    <p>{cTotales}</p>
                 </div>
                 <div className="col">
                     <h4>Resto</h4>
-                    <p>{censados.length - censados.filter(c=>c.departamento===3218).length}</p>
+                    <p>{cResto}</p>
                 </div>
             </div>
 

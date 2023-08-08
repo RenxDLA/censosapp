@@ -4,23 +4,50 @@ const Tiempo = () => {
   const [dias, setDias] = useState(0);
   const [horas, setHoras] = useState(0);
   const [mins, setMins] = useState(0);
+  const [segs, setSegs] = useState(0);
 
-  useEffect(() => {
-    let hoy = new Date();
-    let finCenso = new Date('2023-08-31');
-    let diferencia = finCenso - hoy;
+  const calcularConteo = () => {
+    const diferencia = new Date('2023-08-31') - new Date();
     setDias(Math.floor(diferencia / (1000 * 60 * 60 * 24)));
     setHoras(Math.floor((diferencia / (1000 * 60 * 60)) % 24));
     setMins(Math.floor((diferencia / (1000 * 60)) % 60));
+    setSegs(Math.floor((diferencia / 1000) % 60))
+
+  }
+
+  useEffect(() => {
+
+
+    const intervalo = setInterval(() => {
+      calcularConteo();
+    }, 1000);
+    return () => {
+      //frena el calculo del intervalo, sino pisa el valor real
+      clearInterval(intervalo);
+    };
+
   }, [])
 
   return (
     <div className="row col-12 tiem">
       <h2>Tiempo restante </h2>
       <div className="row">
-        <p className="col">{dias}</p>
-        <p className="col">:{horas}</p>
-        <p className="col">:{mins}</p>
+        <div className="col">
+          <p>Dias</p>
+          <p className="">{dias}</p>
+        </div>
+        <div className="col">
+          <p>Horas</p>
+          <p className="">:{horas}</p>
+        </div>
+        <div className="col">
+          <p>Minutos</p>
+          <p className="">:{mins}</p>
+        </div>
+        <div className="col">
+          <p>Segundos</p>
+          <p className="">:{segs}</p>
+        </div>
       </div>
     </div>
   )

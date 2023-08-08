@@ -2,7 +2,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 delete L.Icon.Default.prototype._getIconUrl;
 
@@ -16,7 +16,9 @@ const Mapa = () => {
   const deptos = useSelector(state => state.deptos.deptos);
   const censados = useSelector(state => state.censados.censados);
 
+
   useEffect(() => {
+
   }, [censados])
   
   return (

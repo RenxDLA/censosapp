@@ -7,6 +7,7 @@ import { seteardeptos } from "../features/deptosSlice";
 import ListaCensados from "./ListaCensados";
 import Totales from "./Totales";
 import { setearCensados } from "../features/censadosSlice";
+import { setearocupaciones } from "../features/ocupacionesSlice";
 
 const Dashboard = () => {
 
@@ -29,7 +30,7 @@ const Dashboard = () => {
         .then(r => r.json())
         .then((data) => {
           if (data.codigo === 200) {
-            console.log(data);
+            //console.log(data);
             dispatch(seteardeptos(data.departamentos))
           }
         });
@@ -43,10 +44,26 @@ const Dashboard = () => {
       })
         .then(r => r.json())
         .then((data) => {
-          console.log(data);
+          //console.log("personasCensadas",data.personas);
           if (data.codigo === 200) {
             dispatch(setearCensados(data.personas))
           }
+        });
+
+      fetch(`https://censo.develotion.com/ocupaciones.php`, {
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+          'apikey': apiKey,
+          'iduser': idUsuario
+        },
+      })
+        .then(r => r.json())
+        .then((data) => {
+          //console.log(data)
+          if (data.codigo === 200) {
+            dispatch(setearocupaciones(data.ocupaciones))
+          }
+
         });
 
     }
@@ -61,19 +78,19 @@ const Dashboard = () => {
 
 
         <div className="row row-cols-2 align-items-center">
-          
-            <div className="col">
-              <div className="row row-cols-2 justify-content-around">
+
+          <div className="col">
+            <div className="row row-cols-2 justify-content-around">
 
               <div className="prueba1 " > <Formulario /></div>
               <div className="prueba1" >  <ListaCensados /></div>
-              </div>
             </div>
-          
-          <div className="row">
-          <div className="col prueba">
-            <Totales />
           </div>
+
+          <div className="row">
+            <div className="col prueba">
+              <Totales />
+            </div>
           </div>
         </div>
 

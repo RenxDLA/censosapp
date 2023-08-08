@@ -18,5 +18,5 @@ export const censadosSlice = createSlice({
     }
 })
 
-export const { setearCensados } = censadosSlice.actions;
+export const { setearCensados, agregarCensado } = censadosSlice.actions;
 export default censadosSlice.reducer;

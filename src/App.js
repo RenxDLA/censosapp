@@ -25,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Cabezal />} >
             <Route path="/" element={<Login />} />
+            <Route path="/index.html" element={<Login />} />
             <Route path="/Registro" element={<Registro />} />
             <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="*" element={<NoEncontrado />} />

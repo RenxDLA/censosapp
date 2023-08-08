@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setearciudades } from "../features/ciudadesSlice";
-import { setearocupaciones } from "../features/ocupacionesSlice";
+import { agregarCensado } from "../features/censadosSlice";
 
 const Formulario = () => {
     const name = useRef(null);
@@ -21,14 +21,15 @@ const Formulario = () => {
 
     const agregarCenso = () => {
 
-        let censo = {
+        const censo = {
             idUsuario: localStorage.getItem("UsuarioId"),
             nombre: name.current.value,
-            departamento: slcDepto.current.value,
-            ciudad: slcCity.current.value,
+            departamento: parseInt(slcDepto.current.value),
+            ciudad: parseInt(slcCity.current.value),
             fechaNacimiento: date.current.value,
-            ocupacion: slcO.current.value
+            ocupacion: parseInt(slcO.current.value)
         };
+        //console.log("censoAntes", censo);
         //hacer validaciones al objeto antes del fetch
         if (censo.nombre === "" || censo.departamento === "" || censo.ciudad === "" || censo.fechaNacimiento === "" || censo.ocupacion === "") setMensaje("Por favor complete todos los campos");
         else if (censo.fechaNacimiento >= new Date()) {
@@ -37,7 +38,7 @@ const Formulario = () => {
         else {
             fetch('https://censo.develotion.com/personas.php', {
                 method: 'POST',
-                body: JSON.stringify(censo),
+                body: censo,
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
                     'apikey': localStorage.getItem("ApiKey"),
@@ -46,8 +47,12 @@ const Formulario = () => {
             })
                 .then(r => r.json())
                 .then((data) => {
-                    console.log(data);
+                    //console.log(data);
                     setMensaje(data.mensaje);
+                    const nuevoCensado = { id: data.idCenso, ...censo }
+                    //console.log("censoDesp",censo);
+                    //console.log(nuevoCensado, "nuevo");
+                    dispatch(agregarCensado(nuevoCensado));
                 });
         }
 
@@ -90,21 +95,10 @@ const Formulario = () => {
         //console.log(diferencia);
         if (diferencia > 17) {
             setMayor(true);
-            fetch(`https://censo.develotion.com/ocupaciones.php`, {
-                headers: {
-                    'Content-type': 'application/json; charset=UTF-8',
-                    'apikey': localStorage.getItem("ApiKey"),
-                    'iduser': localStorage.getItem("UsuarioId")
-                },
-            })
-                .then(r => r.json())
-                .then((data) => {
-                    //console.log(data)
-                    if (data.codigo === 200) {
-                        dispatch(setearocupaciones(data.ocupaciones))
-                    }
 
-                });
+        } else {
+            //en caso de que primero se configure que sean mayores de edad y luego se vuelva a cambiar fecha
+            setMayor(false)
         }
     }
 
