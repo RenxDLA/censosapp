@@ -78,15 +78,15 @@ const Dashboard = () => {
         </div>
 
 
-        <div className="row row-cols-2 align-items-center">
+        <div className="row row-cols-2 align-items-center justify-content-around">
 
-          <div className="col">
-            <div className="row row-cols-2 justify-content-around">
+         
+       
 
               <div className="prueba1 " > <Formulario /></div>
               <div className="prueba1" >  <ListaCensados /></div>
-            </div>
-          </div>
+            
+          
 
         
         </div>

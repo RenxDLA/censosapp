@@ -94,10 +94,10 @@ const Graficas = () => {
     }, [censados])
 
     return (
-        <div className="col">
-            <h2 className='row justify-content-center grafcar '>Graficas</h2>
+        <div className="col ">
+            <h2 className='row justify-content-center grafcar'>Graficas</h2>
             <div className="graf">
-                <div className='col grafInd'>
+                <div className='col grafInd '>
                     <Bar options={options} data={{
                         labels: [...deptoC],
                         datasets: [
