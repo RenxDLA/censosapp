@@ -20,7 +20,6 @@ const Formulario = () => {
     const [mensaje, setMensaje] = useState("");
 
     const agregarCenso = () => {
-
         const censo = {
             idUsuario: localStorage.getItem("UsuarioId"),
             nombre: name.current.value,
@@ -31,8 +30,10 @@ const Formulario = () => {
         };
         //console.log("censoAntes", censo);
         //hacer validaciones al objeto antes del fetch
-        if (censo.nombre === "" || censo.departamento === "" || censo.ciudad === "" || censo.fechaNacimiento === "" || censo.ocupacion === "") setMensaje("Por favor complete todos los campos");
-        else if (censo.fechaNacimiento >= new Date()) {
+        if (censo.nombre === "" || censo.departamento === "" || censo.ciudad === "" || censo.fechaNacimiento === "" || censo.ocupacion === "") {
+            setMensaje("Por favor complete todos los campos");
+        }
+        else if (new Date(censo.fechaNacimiento) >= new Date()) {
             setMensaje("La fecha de nacimiento no puede ser posterior a hoy")
         }
         else {

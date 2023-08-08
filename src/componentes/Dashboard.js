@@ -45,7 +45,7 @@ const Dashboard = () => {
         .then(r => r.json())
         .then((data) => {
           //console.log("personasCensadas",data.personas);
-          if (data.codigo === 200) {
+          if (data.codigo === 200) {            
             dispatch(setearCensados(data.personas))
           }
         });

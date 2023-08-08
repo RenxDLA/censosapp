@@ -5,15 +5,16 @@ const Totales = () => {
     const [cMvdeo, setCMvdeo] = useState(0);
     const [cTotales, setCTotales] = useState(0);
     const [cResto, setCResto] = useState(0);
-    const censados = useSelector( state => state.censados.censados);
+    const censados = useSelector(state => state.censados.censados);
     useEffect(() => {
-        setCMvdeo(censados.filter(c=>c.departamento===3218).length);
+        setCMvdeo(censados.filter(c => c.departamento === 3218).length);
         setCTotales(censados.length);
-        setCResto(cTotales-cMvdeo);
+        setCResto(censados.length - censados.filter(c => c.departamento === 3218).length);
+        //console.log(censados);
     }, [censados])
-    
+
     return (
-        <div className="container-fluid col"> 
+        <div className="container-fluid col">
             <h2>Totales censados</h2>
             <div className="row">
                 <div className="col">

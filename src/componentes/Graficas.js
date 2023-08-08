@@ -56,12 +56,15 @@ const Graficas = () => {
     const [cPorOcupa, setCPorOcupa] = useState([]);
     const [ocupaName, setOcupaName] = useState([]);
 
+
     useEffect(() => {
         //console.log("c", censados);
         const cPorDeptoTemp = [];
         const cPorOcupaTemp = [];
         const deptosCTemp = [];
-        const ocupaNameTemp=[];
+        const ocupaNameTemp = [];
+
+
         deptos.map((d) => {
             const cantEnDepto = censados.filter(c => c.departamento === d.id).length;
             //console.log(cantEnDepto);
@@ -106,7 +109,7 @@ const Graficas = () => {
                         ],
                     }} />
                 </div>
-                {/* van una al lado de la otra */}
+
                 <div className="col grafInd">
                     <Bar options={options2} data={{
                         labels: ocupaName,

@@ -11,12 +11,15 @@ export const censadosSlice = createSlice({
         setearCensados: (state, action) => {
             state.censados = action.payload;
         },
-        agregarCensado : (state, action) =>{
+        agregarCensado: (state, action) => {
             state.censados.push(action.payload);
-        }   
+        },
+        eliminarCensado: (state, action) => {
+            state.censados = state.censados.filter(c => c.id !== action.payload);
+        }
 
     }
 })
 
-export const { setearCensados, agregarCensado } = censadosSlice.actions;
+export const { setearCensados, agregarCensado, eliminarCensado } = censadosSlice.actions;
 export default censadosSlice.reducer;

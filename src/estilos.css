@@ -156,3 +156,11 @@
     width: 20%;
     font-weight: 900;
 }
+
+.btn2{
+    font-size: smaller !important;
+    width: 20px !important;
+    height: 20px !important;
+    text-align: center !important;
+    padding: 0% !important;
+}
