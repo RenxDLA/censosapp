@@ -1,33 +1,31 @@
-
-
 .fondo {
-    background-color:rgb(242,238,157, 0.8);
-    
+    background-color: rgb(242, 238, 157, 0.8);
+
 
 }
 
-.login{
-    border: 2px solid black !important;             
+.login {
+    border: 2px solid black !important;
     margin-top: 20px;
     margin-bottom: 20px;
-    background-color: rgb(255, 255, 255, 0.7); 
+    background-color: rgb(255, 255, 255, 0.7);
 }
 
 
-.registro{
-    border: 2px solid black !important;             
+.registro {
+    border: 2px solid black !important;
     margin-top: 20px;
     margin-bottom: 20px;
-    background-color: rgb(255, 255, 255, 0.7); 
+    background-color: rgb(255, 255, 255, 0.7);
 }
 
 .header {
     height: 150px;
     width: 100%;
-    background-color: rgb(85,122,70, 0.8);
+    background-color: rgb(85, 122, 70, 0.8);
     display: flex;
     align-items: center;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     padding: 0 20px;
     color: #fff;
 }
@@ -36,30 +34,30 @@
 .footer {
     display: flex;
     align-items: center;
-    background-color: rgb(140,51,51, 0.8);
-    
+    background-color: rgb(140, 51, 51, 0.8);
+
     bottom: 0;
     width: 100%;
     height: 90px;
     color: white;
-    justify-content:space-between;
-  }
-
-
-.textosLog{
-    font-size: large;
-    margin-top: 50px ;
-    margin-bottom: 10px ;
-    
+    justify-content: space-between;
 }
 
 
-.textosReg{
+.textosLog {
     font-size: large;
-    margin-top: 50px ;
-    margin-bottom: 10px ;
-    
-    
+    margin-top: 50px;
+    margin-bottom: 10px;
+
+}
+
+
+.textosReg {
+    font-size: large;
+    margin-top: 50px;
+    margin-bottom: 10px;
+
+
 }
 
 .textosLog input {
@@ -70,8 +68,8 @@
     margin: 10px;
 }
 
-.btn{
-    font-size:larger;
+.btn {
+    font-size: larger;
     margin: 20px;
     padding: 10px;
     width: 40%;
@@ -81,86 +79,91 @@
 
 
 
-.prueba{
-    border:  solid 3px black;
+.prueba {
+    border: solid 3px black;
     padding: 15px;
     margin: 15px;
     width: 30%;
     height: 200px;
     border-radius: 20px;
-    background-color: rgb(242,238,157, 0.5);
+    background-color: rgb(242, 238, 157, 0.5);
 }
 
-.prueba1{
-    border:  solid 3px black;
+.prueba1 {
+    border: solid 3px black;
     padding: 15px;
     margin: 15px;
     width: 30%;
-    height:500px;
+    height: 500px;
     border-radius: 20px;
-    background-color: rgb(242,238,157, 0.5);
+    background-color: rgb(242, 238, 157, 0.5);
 
 }
 
 
 
-.graf{
+.graf {
     height: 80%;
     padding: 15px;
     margin: 15px;
-    
+
 }
 
-.grafInd{
+.grafInd {
 
- 
-    border:  solid 3px black;
+
+    border: solid 3px black;
     padding: 15px;
     margin: 15px;
     border-radius: 20px;
-    background-color: rgb(242,238,157, 0.5);
+    background-color: rgb(242, 238, 157, 0.5);
 }
 
 
-.grafcar{
+.grafcar {
 
     width: 93%;
-    border:  solid 3px black;
+    border: solid 3px black;
     padding: 15px;
     margin: 15px;
     margin-left: 40px;
     border-radius: 20px;
-    background-color: rgb(242,238,157, 0.5);
+    background-color: rgb(242, 238, 157, 0.5);
 }
 
-.anali{
+.anali {
 
     width: 40%;
-    border:  solid 3px black;
+    border: solid 3px black;
     padding: 15px;
     margin: 15px;
     border-radius: 20px;
-    background-color: rgb(242,238,157, 0.5);
+    background-color: rgb(242, 238, 157, 0.5);
 }
 
-.tiem{
+.tiem {
     margin: 30px;
-    width:90%;
-    border:  solid 3px black;
+    width: 90%;
+    border: solid 3px black;
     padding: 15px;
     border-radius: 20px;
-    background-color: rgb(242,238,157, 0.5);
+    background-color: rgb(242, 238, 157, 0.5);
 }
 
-.btnLog{
+.btnLog {
     width: 20%;
     font-weight: 900;
 }
 
-.btn2{
+.btn2 {
     font-size: smaller !important;
     width: 20px !important;
     height: 20px !important;
     text-align: center !important;
     padding: 0% !important;
+}
+
+.ulCensados {
+    max-height: 300px;
+    overflow-y: auto;
 }

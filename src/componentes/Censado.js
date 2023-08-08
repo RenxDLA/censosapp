@@ -24,11 +24,11 @@ const Censado = ({ id, nombre, ocupacion }) => {
   }
   return (
 
-    <tr>
-      <th>{nombre} </th>
-      <th><img src={`https://censo.develotion.com/imgs/${ocupacion}.png`} /> </th>
-      <th><input type="button" onClick={eliminar} className="btn btn-dark btn2" value="x" /> </th>
-    </tr>
+    <li className="row-3 list-group-item">
+      {nombre} 
+      <img src={`https://censo.develotion.com/imgs/${ocupacion}.png`} /> 
+      <input type="button" onClick={eliminar} className="btn btn-dark btn2" value="x" /> 
+    </li>
 
   )
 }

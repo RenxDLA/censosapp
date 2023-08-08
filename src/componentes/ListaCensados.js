@@ -35,11 +35,10 @@ const ListaCensados = () => {
         {ocupaciones.map((o) => (<option key={o.id} value={o.id}>{o.ocupacion}</option>))}
       </select><br /><br />
       <div className="row">
-        <table className="table table-striped-columns">
-          <tbody>
-            {filtradas.map((c) => < Censado key={c.id} {...c} />)}
-          </tbody>
-        </table>
+
+        <ul className="list-group ulCensados">
+          {filtradas.map((c) => < Censado key={c.id} {...c} />)}
+        </ul>
 
       </div>
     </div>
