@@ -17,16 +17,16 @@ const Totales = () => {
         <div className="container-fluid col">
             <h2>Totales censados</h2>
             <div className="row">
-                <div className="col">
-                    <h4>Montevideo</h4>
+                <div className="col letr">
+                    <p>Montevideo</p>
                     <p>{cMvdeo}</p>
                 </div>
-                <div className="col">
-                    <h4>Total</h4>
+                <div className="col letr">
+                    <p>Total</p>
                     <p>{cTotales}</p>
                 </div>
-                <div className="col">
-                    <h4>Resto</h4>
+                <div className="col letr">
+                    <p>Resto</p>
                     <p>{cResto}</p>
                 </div>
             </div>

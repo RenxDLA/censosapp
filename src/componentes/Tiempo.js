@@ -32,19 +32,19 @@ const Tiempo = () => {
     <div className="row col-12 tiem">
       <h2>Tiempo restante </h2>
       <div className="row">
-        <div className="col">
+        <div className="col letr">
           <p>Dias</p>
           <p className="">{dias}</p>
         </div>
-        <div className="col">
+        <div className="col letr">
           <p>Horas</p>
           <p className="">:{horas}</p>
         </div>
-        <div className="col">
+        <div className="col letr">
           <p>Minutos</p>
           <p className="">:{mins}</p>
         </div>
-        <div className="col">
+        <div className="col letr">
           <p>Segundos</p>
           <p className="">:{segs}</p>
         </div>

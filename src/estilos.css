@@ -103,9 +103,10 @@
 
 
 .graf {
-    height: 80%;
+    
     padding: 15px;
     margin: 15px;
+
 
 }
 
@@ -166,4 +167,24 @@
 .ulCensados {
     max-height: 300px;
     overflow-y: auto;
+}
+
+.letr{
+    font-weight: 700;
+    font-size: large;    
+    
+}
+
+#formuAg input {
+
+    width: 95%;
+    margin: 10px;
+}
+
+
+
+#formuAg select {
+
+    width: 95%;
+    margin: 10px;
 }

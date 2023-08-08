@@ -108,7 +108,7 @@ const Formulario = () => {
             <div>
                 <h2>Agregar censo</h2>
             </div>
-            <div className="formulario">
+            <div className="formulario" id="formuAg">
                 <div className="form-floating mb-3">
                     <input type="text" className="form-control" id="txtNombre" placeholder="Nombre completo del censado" ref={name} />
                     <label htmlFor="txtNombre">Nombre</label><br />
@@ -128,6 +128,7 @@ const Formulario = () => {
                         </select>
                     </div>
                 </div>
+
                 <div>
                     <label htmlFor="txtFecha">Fecha</label><br />
                     <input type="date" id="txtFecha" onChange={slcOcupaciones} ref={date} /><br />
@@ -139,7 +140,7 @@ const Formulario = () => {
                     </select>
                 </div>
                 <div>
-                    <input type="button" value="Agregar" onClick={agregarCenso} />
+                    <input type="button" className="btn btn-success" value="Agregar" onClick={agregarCenso} />
                 </div>
             </div>
             {mensaje}

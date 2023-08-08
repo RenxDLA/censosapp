@@ -96,7 +96,7 @@ const Graficas = () => {
     return (
         <div className="col">
             <h2 className='row justify-content-center grafcar '>Graficas</h2>
-            <div className="row row-col-2 graf">
+            <div className="graf">
                 <div className='col grafInd'>
                     <Bar options={options} data={{
                         labels: [...deptoC],

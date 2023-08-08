@@ -5,7 +5,7 @@ import Analisis from "./Analisis";
 import { useDispatch } from "react-redux";
 import { seteardeptos } from "../features/deptosSlice";
 import ListaCensados from "./ListaCensados";
-import Totales from "./Totales";
+
 import { setearCensados } from "../features/censadosSlice";
 import { setearocupaciones } from "../features/ocupacionesSlice";
 
@@ -74,6 +74,7 @@ const Dashboard = () => {
       <section className="row">
         <div className="col-lg-16" >
           <Analisis />
+        
         </div>
 
 
@@ -87,11 +88,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="row">
-            <div className="col prueba">
-              <Totales />
-            </div>
-          </div>
+        
         </div>
 
 
